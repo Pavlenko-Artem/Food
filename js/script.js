@@ -215,10 +215,10 @@ window.addEventListener('DOMContentLoaded', () => {
 	}
 
 	forms.forEach(item => {
-		postData(item);
+		bindPostData(item);
 	});
 
-	function postData(form) {
+	function bindPostData(form) {
 		form.addEventListener('submit', (e) => {
 			e.preventDefault();
 
@@ -228,9 +228,8 @@ window.addEventListener('DOMContentLoaded', () => {
 				display: block;
 				margin: 0 auto;
 			`;
+
 			form.insertAdjacentElement('afterend', statusMessage);
-
-
 
 			const formData = new FormData(form);
 
@@ -285,4 +284,8 @@ window.addEventListener('DOMContentLoaded', () => {
 			closeModal();
 		}, 4000)
 	}
+
+	fetch('http://localhost:3000/menu')
+		.then(data => data.json())
+		.then(res => console.log(res))
 });
