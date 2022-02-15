@@ -17,6 +17,11 @@
 	},
 	"homepage": "https://github.com/Pavlenko-Artem/Food#readme",
 	"devDependencies": {
-		"json-server": "^0.17.0"
+		"json-server": "^0.17.0",
+		"webpack": "^5.68.0",
+		"webpack-cli": "^4.9.2"
+	},
+	"dependencies": {
+		"path-browserify": "^1.0.1"
 	}
 }
